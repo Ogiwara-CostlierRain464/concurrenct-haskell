@@ -2,6 +2,7 @@ import Control.Parallel.Strategies
 import Control.Parallel
 import System.Environment
 import Control.Exception
+import Control.DeepSeq
 
 f :: Int -> Int
 f x = x * 2
@@ -13,7 +14,7 @@ y = 4
 
 test1 :: Eval (Int, Int)
 test1 = do
-    a <- rpar(f x)
+    a <- rpar (f x)
     b <- rpar (f y)
     return (a,b)
 
