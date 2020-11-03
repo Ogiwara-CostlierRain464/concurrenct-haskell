@@ -20,5 +20,4 @@ tryMe = do
 
 
 main :: IO () 
-main = do
-    tryMe  
+main = tryMe  
